@@ -1,8 +1,9 @@
 .header__content{
     padding: 30px;
+    background-color: #28a74547;
 }
 
 .btn__register{
     float: right;
-    color: green;
+    background-color: green;
 }
