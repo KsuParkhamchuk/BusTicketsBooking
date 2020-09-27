@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -16,6 +16,7 @@
 <header class="header">
     <div class="header__content d-flex justify-content-end align-items-center">
         <p class="user__welcome mr-5">Здравствуйте, [[${user?.firstName}]] </p>
+        <a class="mr-5" th:href="@{/adminPage}" class="btn btn-primary btn__cancel" sec:authorize="hasAuthority('ADMIN')">Панель администратора</a>
         <a th:href="@{/login}" class="btn btn-primary btn__cancel">Выйти</a>
     </div>
 </header>
