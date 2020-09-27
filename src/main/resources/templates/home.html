@@ -19,15 +19,28 @@
         <a th:href="@{/login}" class="btn btn-primary btn__cancel">Выйти</a>
     </div>
 </header>
-    <h3 class="my-5">Выберите нужный маршрут</h3>
-    <div class="home__content d-flex justify-content-center">
+    <h3 class="my-5 d-flex justify-content-center">Выберите нужный маршрут</h3>
+    <div class="home__content ">
         <div class="table">
             <div class="table__header d-flex">
-                <div class="col-3">Направление</div>
-                <div class="col-2">Даты</div>
-                <div class="col-2">Стоимость</div>
-                <div class="col-2">Количество свободных мест</div>
-                <div class="col-3"><button class="btn-outline-danger">Купить</button></div>
+                <div class="col-3 text-center font-weight-bold">Направление</div>
+                <div class="col-2 text-center font-weight-bold">Даты</div>
+                <div class="col-2 text-center font-weight-bold">Стоимость</div>
+                <div class="col-2 text-center font-weight-bold">Количество свободных мест</div>
+            </div>
+            <div class="table__stroke d-flex my-4">
+                <div class="col-3 text-center">Москва-Минск</div>
+                <div class="col-2 text-center">
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col-2 text-center">345</div>
+                <div class="col-2 text-center">6</div>
+                <div class="col-3 text-center"><button class="btn btn-outline-danger">Купить</button></div>
             </div>
         </div>
     </div>

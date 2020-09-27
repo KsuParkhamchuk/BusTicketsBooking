@@ -27,10 +27,12 @@
         </div>
 
         <div th:if="${userExist == true}"><label>АШИПКА</label></div>
-        <div th:if="${passwordMatch == false}" сдфыы="text-danger"> Пароли не совпадают</div>
+        <div th:if="${passwordMatch == false}" class="text-danger"> Пароли не совпадают</div>
         <button type="submit" class="btn btn-primary btn__register">Войти</button>
-        <a href="/registration">Зарегистрироваться</a>
     </form>
+</div>
+<div class="d-flex justify-content-center">
+    <a href="/registration" class="">Зарегистрироваться</a>
 </div>
 
 </body>
