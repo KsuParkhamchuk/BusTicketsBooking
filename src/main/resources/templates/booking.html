@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,16 +10,21 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Перед покупкой билета пожалуйста зарегистрируйтесь!</h1>
-    <div class="registration form">
+    <h1>Покупка билета</h1>
+    <div class="booking form">
         <form>
             <div class="form-group">
-                <label >Имя</label>
-                <input type="text" class="form-control" name="userName" placeholder="Введите имя">
+                <label >Маршрут</label>
+                <input type="text" class="form-control" name="trip" placeholder="Введите имя">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Фамилия</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="userSurname" placeholder="Введите фамилию">
+                <label >Доступные даты</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
             </div>
             <div class="form-group">
                 <label >Отчество</label>
@@ -30,7 +34,7 @@
                 <label>Номер телефона</label>
                 <input type="text" class="form-control" name="telephoneNumber" aria-describedby="telephoneHelpBlock">
                 <small id="telephoneHelpBlock" class="form-text text-muted">
-                   Телефон должен начинаться с +375 и содержать в себе код оператора (напр. 33, 44, 29)
+                    Телефон должен начинаться с +375 и содержать в себе код оператора (напр. 33, 44, 29)
                 </small>
             </div>
             <div class="form-group">
@@ -49,9 +53,8 @@
                 <label>Повторите пароль</label>
                 <input type="password"  class="form-control" name="confirmPassword">
             </div>
-            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            <button type="submit" class="btn btn-primary">Купить</button>
         </form>
     </div>
-
 </body>
 </html>
