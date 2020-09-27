@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ticketbooking
+    username: postgres
+    password: postgres
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      leak-detection-threshold: 10000
+      connection-timeout: 500
+  thymeleaf:
+    enabled: true
+    mode: HTML
+    cache: false
+    template-resolver-order: 1
+    excluded-view-names: "stireport-*"
+  mvc:
+    locale-resolver: fixed
+    locale: ru
+    view:
+      prefix: "/jsp/"
+      suffix: ".jsp"
