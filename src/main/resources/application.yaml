@@ -7,6 +7,24 @@ spring:
     hikari:
       leak-detection-threshold: 10000
       connection-timeout: 500
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        discriminator.ignore_explicit_for_joined: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 50
+          lob:
+            non_contextual_creation: true
+      jackson:
+        mapper.default_view_inclusion: true
+        serialization.indent_output: true
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    generate-ddl: false
   thymeleaf:
     enabled: true
     mode: HTML
