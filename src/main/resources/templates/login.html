@@ -14,6 +14,24 @@
     <link rel="stylesheet" th:href="@{/static/css/common.css}">
 </head>
 <body>
-<a href="/registration">Зарегистрироваться</a>
+<h3 class="text-center my-4">Перед покупкой билета пожалуйста зарегистрируйтесь!</h3>
+<div class="registration form d-flex justify-content-center">
+    <form th:action="@{/login}" method="post">
+        <div class="form-group">
+            <label >Логин</label>
+            <input type="text" class="form-control" name="username" placeholder="Введите имя">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Пароль</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="password" placeholder="Введите фамилию">
+        </div>
+
+        <div th:if="${userExist == true}"><label>АШИПКА</label></div>
+        <div th:if="${passwordMatch == false}" сдфыы="text-danger"> Пароли не совпадают</div>
+        <button type="submit" class="btn btn-primary btn__register">Войти</button>
+    </form>
+    <a href="/registration">Зарегистрироваться</a>
+</div>
+
 </body>
 </html>
