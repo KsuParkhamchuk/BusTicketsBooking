@@ -7,3 +7,9 @@
     float: right;
     background-color: green;
 }
+
+.btn__cancel{
+    background-color: #fff!important;
+    color: #000!important;
+    border-color: #fff!important;
+}

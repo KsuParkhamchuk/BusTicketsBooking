@@ -14,11 +14,11 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__content">
-            <button class="btn btn-primary d-flex justify-content-end">Отмена</button>
+        <div class="header__content d-flex justify-content-end">
+            <a th:href="@{/login}" class="btn btn-primary btn__cancel">Отмена</a>
         </div>
     </header>
-    <h3 class="text-center mb-4">Перед покупкой билета пожалуйста зарегистрируйтесь!</h3>
+    <h3 class="text-center my-4">Перед покупкой билета пожалуйста зарегистрируйтесь!</h3>
     <div class="registration form d-flex justify-content-center">
         <form th:action="@{/registration}" method="post">
             <div class="form-group">
