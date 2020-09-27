@@ -1,4 +1,4 @@
-package com.ticketsbooking.bus;
+package com.ticketsbooking.route;
 
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +9,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @Setter(onMethod_ = @Autowired)
-public class BusController {
+public class RoutePointController {
 
-    private BusService busService;
+    private RoutePointService routePointService;
 
     @PreAuthorize("hasAuthority('ADMIN')")
-    @PostMapping("/bus/add")
-    public void addBus(@RequestParam Integer placeAmount){
-        busService.save(placeAmount);
+    @PostMapping("/route_point/add")
+    public void addRoutePoint(@RequestParam String name) {
+        try {
+            routePointService.save(name);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

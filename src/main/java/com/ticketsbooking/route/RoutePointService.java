@@ -12,7 +12,10 @@ public class RoutePointService {
     private RoutePointRepository routePointRepository;
 
     @Transactional
-    public void save(String name) {
+    public void save(String name) throws Exception {
+        if (routePointRepository.existsByName(name)) {
+            throw new Exception("exists with this name");
+        }
         var routePoint = new RoutePoint();
         routePoint.setName(name);
         routePointRepository.save(routePoint);
