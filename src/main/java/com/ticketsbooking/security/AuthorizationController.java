@@ -22,10 +22,15 @@ public class AuthorizationController {
     }
 
     @PostMapping("/registration")
-    public String registration(@RequestParam String phoneNumber,@RequestParam String password,
+    public String registration(@RequestParam String phoneNumber,@RequestParam String password, @RequestParam String confirmPassword,
                              @RequestParam String firstName,@RequestParam String middleName,
                              @RequestParam String lastName,@RequestParam String passportSerial,
                              @RequestParam String passportNumber, Model model) {
+        if (!password.equals(confirmPassword)) {
+            model.addAttribute("passwordMatch", false);
+            return "registration";
+        }
+
         try {
             userService.saveUser(phoneNumber,password,firstName,middleName,lastName,passportNumber,passportSerial);
             return "login";
