@@ -24,7 +24,7 @@ public class Trip extends DomainEntity {
 
     @OneToMany
     @Column(name = "passengers")
-    private List<User> passangers;
+    private List<User> passengers;
 
     @Column(name = "price")
     private Double price;

@@ -43,4 +43,13 @@ public class User extends DomainEntity {
             @JoinColumn(name = "authority_id", referencedColumnName = "id"))
     private Set<Authority> authorities;
 
+    public boolean isAdmin(){
+        for (Authority authority: this.getAuthorities()
+             ) {
+            if (authority.getName().equals("ADMIN")) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

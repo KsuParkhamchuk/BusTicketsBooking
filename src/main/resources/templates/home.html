@@ -16,7 +16,9 @@
 <header class="header">
     <div class="header__content d-flex justify-content-end align-items-center">
         <p class="user__welcome mr-5">Здравствуйте, [[${user?.firstName}]] </p>
-        <a class="mr-5" th:href="@{/adminPage}" class="btn btn-primary btn__cancel" sec:authorize="hasAuthority('ADMIN')">Панель администратора</a>
+        <div th:if="${user?.isAdmin()}">
+            <a class="btn btn-primary btn__cancel mr-5" th:href="@{/admin_page}" >Панель администратора</a>
+        </div>
         <a th:href="@{/login}" class="btn btn-primary btn__cancel">Выйти</a>
     </div>
 </header>
