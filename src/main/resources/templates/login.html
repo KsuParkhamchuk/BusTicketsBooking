@@ -13,7 +13,7 @@
 <body>
     <h1>Перед покупкой билета пожалуйста зарегистрируйтесь!</h1>
     <div class="registration form">
-        <form>
+        <form th:action="@{/registration}" method="post">
             <div class="form-group">
                 <label >Имя</label>
                 <input type="text" class="form-control" name="firstName" placeholder="Введите имя">
