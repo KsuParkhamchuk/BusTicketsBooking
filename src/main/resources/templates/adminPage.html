@@ -34,8 +34,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Дата</label>
-                        <input type="date" class="form-control" id="exampleInputPassword1" name="tripdate" placeholder="Дата">
+                        <label for="beginningDate">Дата отправления</label>
+                        <input type="date" class="form-control" id="beginningDate" name="tripdate" placeholder="Дата">
+                    </div>
+                    <div class="form-group">
+                        <label for="arrivalDate">Дата приезда</label>
+                        <input type="date" class="form-control" id="arrivalDate" name="tripdate" placeholder="Дата">
                     </div>
                     <div class="form-group">
                         <label >Стоимость</label>
@@ -58,7 +62,7 @@
                 <form  method="post">
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Точка отправления</label>
+                        <label >Точка отправления</label>
                         <select class="custom-select mr-sm-2" id="beginPoint">
                             <option selected>Маршрут...</option>
                             <option value="1">One</option>
@@ -80,12 +84,12 @@
                 </form>
             </div>
         </div>
-        <div class="row newBus">
+        <div class="row newBus justify-content-arround">
 
             <form  method="post">
                 <h5 class="my-4">Создание нового автобуса</h5>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Марка</label>
+                    <label >Марка</label>
                     <input class="form-control"  name="busname" placeholder="Марка автобуса">
                 </div>
                 <div class="form-group">
@@ -95,6 +99,16 @@
 
                 <button type="submit" class="btn btn-primary btn__register">Создать</button>
             </form>
+
+            <form  method="post" class="ml-5">
+                <h5 class="my-4">Создание новой точки </h5>
+                <div class="form-group">
+                    <label >Точка </label>
+                    <input class="form-control"  name="newstartpoint" placeholder="Точка ">
+                </div>
+                <button type="submit" class="btn btn-primary btn__register">Создать</button>
+            </form>
+
         </div>
     </div>
 </main>
