@@ -8,10 +8,12 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.swing.text.DateFormatter;
+import javax.websocket.server.PathParam;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -23,11 +25,19 @@ import java.time.format.DateTimeFormatter;
 public class TripController {
 
     private TripService tripService;
+    private TripRepository tripRepository;
 
     @GetMapping({"/home","/"})
     public String getHomePage(@AuthenticationPrincipal UserDetailsImpl userImpl, Model model) {
         model.addAttribute("user", userImpl != null ? userImpl.getUser() : null);
+        var trips = tripRepository.findAll();
+        model.addAttribute("trips",trips);
         return "home";
+    }
+
+    @GetMapping("/trip/{id}")
+    public String getTripPage(@PathVariable Long id) {
+        return "buyTicket";
     }
 
     @PreAuthorize("hasAuthority('ADMIN')")

@@ -34,8 +34,8 @@
                 <div class="col-2 text-center font-weight-bold">Стоимость</div>
                 <div class="col-2 text-center font-weight-bold">Количество свободных мест</div>
             </div>
-            <div class="table__stroke d-flex my-4">
-                <div class="col-3 text-center">Москва-Минск</div>
+            <div th:each="trip : ${trips}" class="table__stroke d-flex my-4">
+                <div class="col-3 text-center">[[${trip.getRouteNames()}]]</div>
                 <div class="col-2 text-center">
                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                         <option selected>Choose...</option>
@@ -44,9 +44,9 @@
                         <option value="3">Three</option>
                     </select>
                 </div>
-                <div class="col-2 text-center">345</div>
-                <div class="col-2 text-center">6</div>
-                <div class="col-3 text-center"><button class="btn btn-outline-danger">Купить</button></div>
+                <div class="col-2 text-center">[[${trip.price}]]</div>
+                <div class="col-2 text-center">[[${trip.getFreeSeats()}]]</div>
+                <div class="col-3 text-center"><a th:href="@{/trip/{id} (id=${trip.id})}" class="btn btn-outline-danger">Купить</a></div>
             </div>
         </div>
     </div>

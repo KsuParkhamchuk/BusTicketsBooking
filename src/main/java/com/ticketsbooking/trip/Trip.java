@@ -35,4 +35,14 @@ public class Trip extends DomainEntity {
 
     @OneToOne
     private Bus bus;
+
+    @Transient
+    public String getRouteNames(){
+        return route.getDeparturePoint().getName() + "-" + route.getArrivalPoint().getName();
+    }
+
+    @Transient
+    public Integer getFreeSeats(){
+        return bus.getPlaceAmount() - passengers.size();
+    }
 }
