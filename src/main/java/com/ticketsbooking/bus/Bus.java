@@ -12,6 +12,9 @@ import javax.persistence.Entity;
 @Setter
 public class Bus extends DomainEntity {
 
+    @Column(name = "bus_brand")
+    private String brand;
+
     @Column(name = "place_amount")
     private Integer placeAmount;
 }

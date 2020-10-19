@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -17,10 +18,10 @@ import java.util.List;
 public class Trip extends DomainEntity {
 
     @Column(name = "departure_date")
-    private LocalDateTime departureDate;
+    private LocalDate departureDate;
 
     @Column(name = "arrival_date")
-    private LocalDateTime arrivalDate;
+    private LocalDate arrivalDate;
 
     @OneToMany
     @Column(name = "passengers")

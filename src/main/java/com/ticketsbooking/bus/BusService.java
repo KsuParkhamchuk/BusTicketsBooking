@@ -12,8 +12,9 @@ public class BusService {
     private BusRepository busRepository;
 
     @Transactional
-    public void save(Integer placeAmount) {
+    public void save(String brand, Integer placeAmount) {
         var bus = new Bus();
+        bus.setBrand(brand);
         bus.setPlaceAmount(placeAmount);
         busRepository.save(bus);
     }

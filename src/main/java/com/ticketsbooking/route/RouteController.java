@@ -15,7 +15,8 @@ public class RouteController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/route/add")
-    public void addRoute(@RequestParam Long arrivalPointId, @RequestParam Long departurePointId){
+    public String addRoute(@RequestParam Long arrivalPointId, @RequestParam Long departurePointId){
         routeService.save(departurePointId,arrivalPointId);
+        return "redirect:/admin_page";
     }
 }

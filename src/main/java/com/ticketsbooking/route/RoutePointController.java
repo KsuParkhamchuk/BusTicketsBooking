@@ -15,11 +15,12 @@ public class RoutePointController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/route_point/add")
-    public void addRoutePoint(@RequestParam String name) {
+    public String addRoutePoint(@RequestParam String name) {
         try {
             routePointService.save(name);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        return "redirect:/admin_page";
     }
 }

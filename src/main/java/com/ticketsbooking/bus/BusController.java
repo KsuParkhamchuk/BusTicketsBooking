@@ -15,7 +15,8 @@ public class BusController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/bus/add")
-    public void addBus(@RequestParam Integer placeAmount){
-        busService.save(placeAmount);
+    public String addBus(@RequestParam String brand, @RequestParam Integer placeAmount){
+        busService.save(brand,placeAmount);
+        return "redirect:/admin_page";
     }
 }
