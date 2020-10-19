@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group">
                         <label >Стоимость</label>
-                        <input type="number" class="form-control" name="username" placeholder="Стоимость">
+                        <input class="form-control" name="username" placeholder="Стоимость">
                     </div>
                     <div class="form-group">
                         <label >Автобус</label>
@@ -59,28 +59,38 @@
 
                     <div class="form-group">
                         <label for="exampleInputPassword1">Точка отправления</label>
-                        <input type="date" class="form-control"  name="tripdeparturepoint" placeholder="Точка отправления">
+                        <select class="custom-select mr-sm-2" id="beginPoint">
+                            <option selected>Маршрут...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label >Точка прибытия</label>
-                        <input type="number" class="form-control" name="triparrivalpoint" placeholder="Точка прибытия">
+                        <select class="custom-select mr-sm-2" id="arrivalPoint">
+                            <option selected>Маршрут...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn__register">Создать</button>
                 </form>
             </div>
         </div>
-        <div class="row">
-            <h5 class="my-4">Создание нового автобуса</h5>
-            <form  method="post">
+        <div class="row newBus">
 
+            <form  method="post">
+                <h5 class="my-4">Создание нового автобуса</h5>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Наименование</label>
-                    <input type="date" class="form-control"  name="busname" placeholder="Наименование автобуса">
+                    <label for="exampleInputPassword1">Марка</label>
+                    <input class="form-control"  name="busname" placeholder="Марка автобуса">
                 </div>
                 <div class="form-group">
                     <label >Количество мест</label>
-                    <input type="number" class="form-control" name="placeamount" placeholder="Количество мест">
+                    <input  class="form-control" name="placeamount" placeholder="Количество мест">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn__register">Создать</button>
