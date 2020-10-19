@@ -19,6 +19,9 @@
         <div th:if="${user?.isAdmin()}">
             <a class="btn btn-primary btn__cancel mr-5" th:href="@{/admin_page}" >Панель администратора</a>
         </div>
+        <div >
+            <a class="btn btn-primary btn__cancel mr-5" th:href="@{/user_page}" >Кабинет пользователя</a>
+        </div>
         <a th:href="@{/login}" class="btn btn-primary btn__cancel">Выйти</a>
     </div>
 </header>
